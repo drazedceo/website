@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { UserIcon, GlobeAltIcon, LightBulbIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
-// Remove GSAP imports for now - will implement with vanilla JS and Framer Motion
 
 const About = () => {
   const heroRef = useRef(null);
@@ -172,6 +172,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>About Drazed &amp; Co | Remote-First AI &amp; Automation Agency</title>
+        <meta name="description" content="Learn about Drazed &amp; Co — a remote-first AI innovation agency founded by Anees and Sheikh Abdul Rehman, helping businesses worldwide simplify, automate, and scale." />
+        <link rel="canonical" href="https://drazed.co/about" />
+        <meta property="og:title" content="About Drazed & Co | Remote-First AI & Automation Agency" />
+        <meta property="og:description" content="Remote-first AI innovation agency helping businesses worldwide simplify, automate, and scale through intelligent digital systems." />
+        <meta property="og:url" content="https://drazed.co/about" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-32 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a] min-h-[70vh] flex items-center relative overflow-hidden">
         <canvas

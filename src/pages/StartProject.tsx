@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircleIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
-// Remove GSAP and Typed.js imports for now
 
 const StartProject = () => {
   const [formData, setFormData] = useState({
@@ -104,6 +104,14 @@ const StartProject = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>Start Your Project | Work With Drazed &amp; Co</title>
+        <meta name="description" content="Ready to grow? Start your project with Drazed &amp; Co — tell us about your business goals and we'll build the automation, website, or marketing system you need." />
+        <link rel="canonical" href="https://drazed.co/start-project" />
+        <meta property="og:title" content="Start Your Project | Work With Drazed & Co" />
+        <meta property="og:description" content="Tell us about your business goals and let Drazed & Co build the digital systems you need to grow." />
+        <meta property="og:url" content="https://drazed.co/start-project" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a]">
         {/* Stars background */}

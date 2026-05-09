@@ -1,0 +1,43 @@
+# Drazed & Co
+
+> Remote-first digital agency specialising in business automation, website development, social media growth, paid advertising, SEO, and strategic brand design.
+
+## Company
+
+- **Name**: Drazed & Co
+- **Website**: https://drazed.co
+- **Email**: info@drazed.co
+- **Phone**: +92 320 1837828
+- **Location**: Lahore, Punjab, Pakistan
+- **Hours**: Monday–Saturday, 10:00 AM–5:00 PM PKT
+- **Clients**: Worldwide
+
+## Services
+
+- Business Process Automation (N8N, Zapier, Make, custom APIs)
+- Custom Website Development (React, Shopify, CMS)
+- Social Media Growth & Content (Instagram, Reels, Shorts)
+- Paid Advertising (Meta, TikTok, Google Ads)
+- Search Engine Optimization (SEO)
+- Strategic Brand Design (logo, identity, style guides)
+- Shopify Store Development & E-commerce Automation
+- Influencer Marketing Campaign Management
+- AI Agents & WhatsApp Chatbot Integration
+- Email Marketing Automations
+
+## Pricing
+
+- Starter: $149/mo — Manual content creation and publishing
+- Growth: $299/mo — Paid ads + 30-day content system
+- Smart Scale: $599/mo — Automation, website, AI lead flows
+- Dominate AI: $1,499/mo — Full-stack enterprise automation
+
+## Key Pages
+
+- [Home](https://drazed.co/)
+- [Services](https://drazed.co/services)
+- [Plans & Pricing](https://drazed.co/plans)
+- [Portfolio](https://drazed.co/portfolio)
+- [About](https://drazed.co/about)
+- [Contact](https://drazed.co/contact)
+- [Start a Project](https://drazed.co/start-project)

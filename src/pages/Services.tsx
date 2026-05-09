@@ -1,16 +1,17 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  BoltIcon, 
-  CogIcon, 
-  PaintBrushIcon, 
-  MegaphoneIcon, 
-  DocumentTextIcon, 
+import { Helmet } from 'react-helmet-async';
+import {
+  BoltIcon,
+  CogIcon,
+  PaintBrushIcon,
+  MegaphoneIcon,
+  DocumentTextIcon,
   FunnelIcon,
   ShoppingBagIcon
 } from '@heroicons/react/24/outline';
-// Remove Three.js import for now - will implement with CSS animations
 
 const Services = () => {
   const threeRef = useRef(null);
@@ -98,7 +99,7 @@ const Services = () => {
       ]
     },
     {
-      title: '� SHOPIFY STORE DEVELOPMENT',
+      title: '🔹 SHOPIFY STORE DEVELOPMENT',
       description: 'End-to-end e-commerce solutions with automation and conversion optimization',
       icon: <ShoppingBagIcon className="w-8 h-8" />,
       features: [
@@ -112,7 +113,7 @@ const Services = () => {
       ]
     },
     {
-      title: '�🔹 ADD-ONS & SPECIAL SERVICES',
+      title: '🔹 ADD-ONS & SPECIAL SERVICES',
       description: 'Additional tools and services to enhance your business',
       icon: <FunnelIcon className="w-8 h-8" />,
       features: [
@@ -127,6 +128,14 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>Services | Digital Marketing, Automation &amp; Web Development — Drazed &amp; Co</title>
+        <meta name="description" content="Explore Drazed &amp; Co's full service catalog: social media growth, video creation, paid ads (Meta, TikTok, Google), custom automation, SEO, Shopify development, and influencer marketing." />
+        <link rel="canonical" href="https://drazed.co/services" />
+        <meta property="og:title" content="Services | Digital Marketing & Automation — Drazed & Co" />
+        <meta property="og:description" content="Social media growth, paid ads, business automation, website development, SEO, Shopify, and influencer marketing — all under one roof." />
+        <meta property="og:url" content="https://drazed.co/services" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-32 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a] min-h-[70vh] flex items-center relative overflow-hidden">
         <div 
@@ -144,7 +153,7 @@ const Services = () => {
             className="text-center relative"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-['Orbitron'] leading-tight">
-              🧩 Drazed & Co — Full{' '}
+              Drazed &amp; Co — Full{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FFF7] to-[#3D9DFF]">
                 Service Catalog
               </span>
@@ -271,18 +280,18 @@ const Services = () => {
               Let's discuss which services would work best for your business goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/start-project"
+              <Link
+                to="/start-project"
                 className="bg-[#0A0A0A] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0A0A0A]/90 transition-all duration-300 transform hover:scale-105"
               >
                 Start Your Project
-              </a>
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="border-2 border-[#0A0A0A] text-[#0A0A0A] px-8 py-4 rounded-lg font-semibold hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
               >
                 Schedule a Call
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

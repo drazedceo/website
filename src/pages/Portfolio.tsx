@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 type CaseStudy = {
   client: string;
   title: string;
@@ -44,6 +45,14 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>Portfolio | Case Studies &amp; Client Work — Drazed &amp; Co</title>
+        <meta name="description" content="Explore Drazed &amp; Co's portfolio of real-world digital transformations — from corporate web infrastructure to industrial digital overhauls and e-commerce automation." />
+        <link rel="canonical" href="https://drazed.co/portfolio" />
+        <meta property="og:title" content="Portfolio | Case Studies & Client Work — Drazed & Co" />
+        <meta property="og:description" content="Real-world digital transformations: corporate websites, e-commerce automation, and brand identity projects by Drazed & Co." />
+        <meta property="og:url" content="https://drazed.co/portfolio" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a]">
         {/* Complex geometric shapes */}
