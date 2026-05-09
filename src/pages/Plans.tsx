@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { CheckIcon } from '@heroicons/react/24/outline';
 
 const Plans = () => {
@@ -159,8 +161,36 @@ const Plans = () => {
     };
   }, []);
 
+  const pricingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Drazed & Co Pricing Plans',
+    description: 'Growth and automation plans for creators, brands, and businesses.',
+    itemListElement: plans.map((plan, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Offer',
+        name: plan.name,
+        description: plan.description,
+        price: plan.price.replace('/mo', '').replace('$', ''),
+        priceCurrency: 'USD',
+        seller: { '@type': 'Organization', name: 'Drazed & Co' },
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>Pricing Plans | Growth &amp; Automation Packages — Drazed &amp; Co</title>
+        <meta name="description" content="Drazed &amp; Co pricing plans from $149/mo. Starter, Growth, Smart Scale, and Dominate AI — social media, automation, paid ads, SEO, and Shopify development packages." />
+        <link rel="canonical" href="https://drazed.co/plans" />
+        <meta property="og:title" content="Pricing Plans | Growth & Automation Packages — Drazed & Co" />
+        <meta property="og:description" content="Plans from $149/mo covering social media, automation, paid ads, SEO, and website development." />
+        <meta property="og:url" content="https://drazed.co/plans" />
+        <script type="application/ld+json">{JSON.stringify(pricingSchema)}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a]">
         {/* Floating geometric elements */}
@@ -179,7 +209,7 @@ const Plans = () => {
             className="text-center"
           >
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-['Orbitron']">
-              💼 Drazed & Co — Growth & Automation{' '}
+              Drazed &amp; Co — Growth &amp; Automation{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FFF7] to-[#3D9DFF]">
                 Plans
               </span>
@@ -270,8 +300,8 @@ const Plans = () => {
                 </ul>
 
                 <div className="text-center mt-auto pt-4">
-                  <a
-                    href="/start-project"
+                  <Link
+                    to="/start-project"
                     className={`block w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 font-['Montserrat'] ${
                       plan.buttonStyle === 'solid'
                         ? 'bg-gradient-to-r from-[#00FFF7] to-[#3D9DFF] text-[#0A0A0A] hover:shadow-lg hover:shadow-[#00FFF7]/30'
@@ -279,7 +309,7 @@ const Plans = () => {
                     }`}
                   >
                     Choose {plan.name}
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -404,18 +434,18 @@ const Plans = () => {
               Choose the plan that fits your growth stage or schedule a call for a custom quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/start-project"
+              <Link
+                to="/start-project"
                 className="bg-[#0A0A0A] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0A0A0A]/90 transition-all duration-300 transform hover:scale-105 font-['Montserrat'] shadow-xl shadow-[#0A0A0A]/20"
               >
                 Start Your Project
-              </a>
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="border-2 border-[#0A0A0A] text-[#0A0A0A] px-8 py-4 rounded-lg font-semibold hover:bg-[#0A0A0A] hover:text-white transition-all duration-300 font-['Montserrat'] shadow-xl shadow-[#0A0A0A]/15"
               >
                 Schedule a Call
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

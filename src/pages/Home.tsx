@@ -2,8 +2,8 @@ import React from 'react';
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRightIcon, BoltIcon, CogIcon, PaintBrushIcon } from '@heroicons/react/24/outline';
-// Remove Typed.js import for now - will implement with vanilla JS
 
 const Home = () => {
   const typedRef = useRef(null);
@@ -120,8 +120,52 @@ const Home = () => {
     },
   ];
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Drazed & Co',
+    url: 'https://drazed.co',
+    logo: 'https://drazed.co/1000076513.png',
+    description: 'Remote-first digital agency specialising in business automation, custom website development, social media growth, paid advertising, SEO, and strategic brand design.',
+    telephone: '+923201837828',
+    email: 'info@drazed.co',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '179 B-III GECHS Link Road, Block B3, GECHS',
+      addressLocality: 'Lahore',
+      addressRegion: 'Punjab',
+      postalCode: '54700',
+      addressCountry: 'PK',
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '10:00',
+      closes: '17:00',
+    },
+    sameAs: [
+      'https://www.facebook.com/people/Drazed-Co/61563864394432/',
+      'https://www.instagram.com/drazedco/',
+      'https://www.tiktok.com/@drazedco',
+    ],
+    priceRange: '$149–$1499/month',
+    areaServed: 'Worldwide',
+  };
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Drazed &amp; Co | Digital Marketing, Automation &amp; Branding Agency</title>
+        <meta name="description" content="Drazed &amp; Co helps businesses simplify, automate, and scale with custom digital systems, paid ads, social media growth, SEO, and website development. Plans from $149/mo." />
+        <link rel="canonical" href="https://drazed.co/" />
+        <meta property="og:title" content="Drazed & Co | Digital Marketing, Automation & Branding Agency" />
+        <meta property="og:description" content="Drazed & Co helps businesses simplify, automate, and scale with custom digital systems, paid ads, social media growth, SEO, and website development." />
+        <meta property="og:url" content="https://drazed.co/" />
+        <meta property="og:image" content="https://drazed.co/1000076513.png" />
+        <meta name="twitter:title" content="Drazed & Co | Digital Marketing, Automation & Branding Agency" />
+        <meta name="twitter:description" content="Custom automation, website development, paid ads, and SEO for businesses ready to scale. Plans from $149/mo." />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a] py-32 lg:py-48 min-h-screen flex items-center">
         <canvas
@@ -147,7 +191,7 @@ const Home = () => {
               <span ref={typedRef}></span>
             </p>
             <p className="text-lg md:text-xl text-[#E5E5E5]/80 mb-12 max-w-4xl mx-auto font-['Open Sans']">
-              Strategic Business Transformation
+              Digital Marketing Agency &amp; Business Automation Studio
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link

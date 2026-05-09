@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  EnvelopeIcon, 
-  PhoneIcon, 
-  MapPinIcon, 
+import { Helmet } from 'react-helmet-async';
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  MapPinIcon,
   ClockIcon,
-  CheckCircleIcon 
+  CheckCircleIcon
 } from '@heroicons/react/24/outline';
-// Remove GSAP import for now
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -86,6 +86,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>Contact Drazed &amp; Co | Get a Free Consultation</title>
+        <meta name="description" content="Get in touch with Drazed &amp; Co. Email us at info@drazed.co, call +92 320 1837828, or visit us in Lahore, Pakistan. Mon–Sat, 10 AM–5 PM PKT." />
+        <link rel="canonical" href="https://drazed.co/contact" />
+        <meta property="og:title" content="Contact Drazed & Co | Get a Free Consultation" />
+        <meta property="og:description" content="Reach out to Drazed & Co for business automation, website development, social media growth, and digital marketing services." />
+        <meta property="og:url" content="https://drazed.co/contact" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1a1a1a]">
         {/* Network nodes */}
